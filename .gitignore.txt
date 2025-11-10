@@ -1,0 +1,13 @@
+# Arquivos de configuração com senhas
+*.ini
+
+# Arquivos de resultado
+*.csv
+*.xlsx
+
+# Cache do Python
+__pycache__/
+
+# Ambientes virtuais
+venv/
+*.env
