@@ -14,7 +14,9 @@ from openpyxl import Workbook
 from openpyxl.utils import get_column_letter 
 from openpyxl.styles import Font
 
-CONFIG_FILE = 'apuracao_webphone.ini'
+# (Linha 15) Substitua a definição de CONFIG_FILE por isto:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_FILE = os.path.join(BASE_DIR, 'apuracao_webphone.ini')
 
 class WebPhoneReportTool(tk.Tk):
     """
