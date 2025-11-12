@@ -529,7 +529,7 @@ class WebPhoneReportTool(tk.Tk):
             self._write_tree_to_worksheet(wb, self.tree_plano, "1. Atualização de Plano")
             self._write_tree_to_worksheet(wb, self.tree_base, "2. Base de Cliente")
             self._write_tree_to_worksheet(wb, self.tree_detalhe, "3. Detalhamento")
-            self._write_tree_to_worksfheet(wb, self.tree_credito, "4. Base de Crédito")
+            self._write_tree_to_worksheet(wb, self.tree_credito, "4. Base de Crédito")
 
             # Salvar o arquivo
             wb.save(filepath)
