@@ -1,13 +1,22 @@
-# Arquivos de configuração com senhas
+# Ignorar arquivos de configuração com senhas
 *.ini
+config.ini
+credentials.ini
+apuracao_webphone.ini
+sqltool.ini
 
-# Arquivos de resultado
-*.csv
-*.xlsx
-
-# Cache do Python
-__pycache__/
-
-# Ambientes virtuais
+# Ignorar ambiente virtual Python
 venv/
-*.env
+.venv/
+env/
+ENV/
+
+# Ignorar cache e compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar arquivos de sistema e IDE
+.DS_Store
+.vscode/
+.idea/

@@ -122,7 +122,7 @@ class SQLQueryTool(tk.Tk):
         ttk.Label(conn_grid_v1, text="Nome do servidor:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.server_entry_v1 = ttk.Combobox(conn_grid_v1, width=38, values=server_list)
         self.server_entry_v1.grid(row=1, column=1, padx=5, pady=5)
-        self.server_entry_v1.insert(0, "spotterv1prd.database.windows.net") # Padrão V1
+        self.server_entry_v1.insert(0, "") # <-- CORRIGIDO
 
         ttk.Label(conn_grid_v1, text="Autenticação:").grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self.auth_type_combo_v1 = ttk.Combobox(conn_grid_v1, width=38, state="readonly",
@@ -134,13 +134,13 @@ class SQLQueryTool(tk.Tk):
         ttk.Label(conn_grid_v1, text="Banco de Dados:").grid(row=3, column=0, sticky="w", padx=5, pady=5)
         self.db_entry_v1 = ttk.Entry(conn_grid_v1, width=40)
         self.db_entry_v1.grid(row=3, column=1, padx=5, pady=5)
-        self.db_entry_v1.insert(0, "spotterv1prd") # Padrão V1
+        self.db_entry_v1.insert(0, "") # <-- CORRIGIDO
 
         self.logon_label_v1 = ttk.Label(conn_grid_v1, text="Logon:")
         self.logon_label_v1.grid(row=4, column=0, sticky="w", padx=5, pady=5)
         self.logon_entry_v1 = ttk.Entry(conn_grid_v1, width=40)
         self.logon_entry_v1.grid(row=4, column=1, padx=5, pady=5)
-        self.logon_entry_v1.insert(0, "suporteN3") # Padrão V1
+        self.logon_entry_v1.insert(0, "") # <-- CORRIGIDO
 
         self.pass_label_v1 = ttk.Label(conn_grid_v1, text="Senha:")
         self.pass_label_v1.grid(row=5, column=0, sticky="w", padx=5, pady=5)
@@ -172,7 +172,7 @@ class SQLQueryTool(tk.Tk):
         ttk.Label(conn_grid_v2, text="Nome do servidor:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.server_entry_v2 = ttk.Combobox(conn_grid_v2, width=38, values=server_list)
         self.server_entry_v2.grid(row=1, column=1, padx=5, pady=5)
-        self.server_entry_v2.insert(0, "spotterprdv2-leitura.database.windows.net") # Padrão V2
+        self.server_entry_v2.insert(0, "") # <-- CORRIGIDO
 
         ttk.Label(conn_grid_v2, text="Autenticação:").grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self.auth_type_combo_v2 = ttk.Combobox(conn_grid_v2, width=38, state="readonly",
@@ -184,13 +184,13 @@ class SQLQueryTool(tk.Tk):
         ttk.Label(conn_grid_v2, text="Banco de Dados:").grid(row=3, column=0, sticky="w", padx=5, pady=5)
         self.db_entry_v2 = ttk.Entry(conn_grid_v2, width=40)
         self.db_entry_v2.grid(row=3, column=1, padx=5, pady=5)
-        self.db_entry_v2.insert(0, "spotterprdv2") # Padrão V2
+        self.db_entry_v2.insert(0, "") # <-- CORRIGIDO
 
         self.logon_label_v2 = ttk.Label(conn_grid_v2, text="Logon:")
         self.logon_label_v2.grid(row=4, column=0, sticky="w", padx=5, pady=5)
         self.logon_entry_v2 = ttk.Entry(conn_grid_v2, width=40)
         self.logon_entry_v2.grid(row=4, column=1, padx=5, pady=5)
-        self.logon_entry_v2.insert(0, "sv2leitura") # Padrão V2
+        self.logon_entry_v2.insert(0, "") # <-- CORRIGIDO
 
         self.pass_label_v2 = ttk.Label(conn_grid_v2, text="Senha:")
         self.pass_label_v2.grid(row=5, column=0, sticky="w", padx=5, pady=5)
@@ -1022,22 +1022,22 @@ class SQLQueryTool(tk.Tk):
             if 'ConnectionV1' in self.config:
                 cfg = self.config['ConnectionV1']
                 self.server_entry_v1.delete(0, tk.END)
-                self.server_entry_v1.insert(0, cfg.get('server', 'spotterv1prd.database.windows.net'))
+                self.server_entry_v1.insert(0, cfg.get('server', '')) # <-- CORRIGIDO
                 self.db_entry_v1.delete(0, tk.END)
-                self.db_entry_v1.insert(0, cfg.get('database', 'spotterv1prd'))
+                self.db_entry_v1.insert(0, cfg.get('database', '')) # <-- CORRIGIDO
                 self.logon_entry_v1.delete(0, tk.END)
-                self.logon_entry_v1.insert(0, cfg.get('logon', 'suporteN3'))
+                self.logon_entry_v1.insert(0, cfg.get('logon', '')) # <-- CORRIGIDO
                 self.pass_entry_v1.delete(0, tk.END)
                 self.pass_entry_v1.insert(0, cfg.get('password', ''))
 
             if 'ConnectionV2' in self.config:
                 cfg = self.config['ConnectionV2']
                 self.server_entry_v2.delete(0, tk.END)
-                self.server_entry_v2.insert(0, cfg.get('server', 'spotterprdv2-leitura.database.windows.net'))
+                self.server_entry_v2.insert(0, cfg.get('server', '')) # <-- CORRIGIDO
                 self.db_entry_v2.delete(0, tk.END)
-                self.db_entry_v2.insert(0, cfg.get('database', 'spotterprdv2'))
+                self.db_entry_v2.insert(0, cfg.get('database', '')) # <-- CORRIGIDO
                 self.logon_entry_v2.delete(0, tk.END)
-                self.logon_entry_v2.insert(0, cfg.get('logon', 'sv2leitura'))
+                self.logon_entry_v2.insert(0, cfg.get('logon', '')) # <-- CORRIGIDO
                 self.pass_entry_v2.delete(0, tk.END)
                 self.pass_entry_v2.insert(0, cfg.get('password', ''))
                 
